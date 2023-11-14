@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { getPages } from "@/sanity/sanity.utils";
-import Link from "next/link";
+import { Navbar } from "@/components/Navbar";
+import { Header } from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,18 +16,11 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pages = await getPages();
-
   return (
     <html lang="en" className="max-w-5xl mx-auto py-5">
       <body className={inter.className}>
-        <div>
-          {pages.map((page) => (
-            <Link key={page._id} href={`/${page.slug}`}>
-              {page.title}
-            </Link>
-          ))}
-        </div>
+        <Header />
+        <Navbar />
         {children}
       </body>
     </html>
