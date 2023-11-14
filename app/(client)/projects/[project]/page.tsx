@@ -27,7 +27,10 @@ export default async function ({ params }: Props) {
           View Project
         </a>
       </header>
-      <div>{project.description}</div>
+      <div>
+        <PortableText value={project.description} />
+      </div>
+      <hr />
       <div>
         <PortableText value={project.content} />
       </div>

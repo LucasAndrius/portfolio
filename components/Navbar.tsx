@@ -3,7 +3,8 @@ import { navbarLinks } from "../utils/NavbarLinks";
 
 export const Navbar = () => {
   return (
-    <div>
+    <div className="pt-5">
+      <hr />
       <ul className="flex">
         {navbarLinks.map((link: any, index) => (
           <li key={index} className="font-bold p-1 mr-2 hover:bg-orange-400">
@@ -11,6 +12,7 @@ export const Navbar = () => {
           </li>
         ))}
       </ul>
+      <hr />
     </div>
   );
 };

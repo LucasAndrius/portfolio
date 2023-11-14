@@ -1,15 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import Github from "../components/svg/github.svg";
+import Hello from "../components/gif/hello.gif";
 
 export const Header = () => {
   return (
     <header className="my-5 ">
-      <h1 className="text-6xl font-bold underline decoration-4 decoration-orange-400 ">
+      <h1 className="flex text-6xl font-bold underline decoration-4 decoration-orange-400 ">
         Lucas
         <a href="/">
           <span className="text-orange-400 hover:text-orange-500">
-            <span>.</span>dev
+            <span>.dev</span>
           </span>
         </a>
       </h1>

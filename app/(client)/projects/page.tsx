@@ -3,16 +3,19 @@ import React from "react";
 import { getProjects } from "@/sanity/sanity.utils";
 import Image from "next/image";
 import Link from "next/link";
+import { Navbar } from "@/components/Navbar";
+import { PortableText } from "@portabletext/react";
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
   return (
     <div>
-      <header>
-        <h1 className="text-5xl font-bold py-10 underline decoration-6 decoration-orange-400">
+      <header className="my-5">
+        <h1 className="text-6xl font-bold underline decoration-4 decoration-orange-400">
           Meus Projetos
         </h1>
       </header>
+      <Navbar />
       <main className="mt-5 grid grid-cols-1 bg-gray-900 px-4 py-6 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-lg">
         {projects.map((project) => (
           <Link
@@ -32,7 +35,9 @@ export default async function ProjectsPage() {
             <div className="mt-4 font-extrabold text-gray-800">
               {project.name}
             </div>
-            <div className="text-gray-500 text-sm">{project.description}</div>
+            <div className="text-gray-500 text-sm">
+              <PortableText value={project.description} />
+            </div>
           </Link>
         ))}
       </main>
