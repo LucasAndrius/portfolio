@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { navbarLinks } from "../utils/NavbarLinks";
+import { navbarLinks } from "../utils/data";
 
-export const Navbar = () => {
+export const NavbarMenu = () => {
   return (
     <div className="pt-5">
       <hr />

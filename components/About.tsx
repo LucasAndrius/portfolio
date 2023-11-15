@@ -6,7 +6,7 @@ export const About = () => {
     <div className="py-5 max-w-[60%]">
       <div>
         <div className="flex items-center py-5">
-          <h2 className="text-2xl">Olá, seja bem-vindo ao meu portfólio!</h2>
+          <h2 className="text-4xl">Olá, bem-vindo ao meu portfólio!</h2>
           <Image src={Hello} alt="" width={35} className="mb-[0.5rem] p-1" />
         </div>
         <p>

@@ -3,7 +3,7 @@ import React from "react";
 import { getProjects } from "@/sanity/sanity.utils";
 import Image from "next/image";
 import Link from "next/link";
-import { Navbar } from "@/components/Navbar";
+import { NavbarMenu } from "@/components/NavbarMenu";
 import { PortableText } from "@portabletext/react";
 
 export default async function ProjectsPage() {
@@ -15,7 +15,7 @@ export default async function ProjectsPage() {
           Meus Projetos
         </h1>
       </header>
-      <Navbar />
+      <NavbarMenu />
       <main className="mt-5 grid grid-cols-1 bg-gray-900 px-4 py-6 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-lg">
         {projects.map((project) => (
           <Link

@@ -1,7 +1,8 @@
 import { About } from "@/components/About";
 import { ButtonLink } from "@/components/ButtonLink";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Navbar } from "@/components/Navbar";
+import { NavbarMenu } from "@/components/NavbarMenu";
 import { getProjectLatest } from "@/sanity/sanity.utils";
 import { PortableText } from "@portabletext/react";
 import { Metadata } from "next";
@@ -32,31 +33,47 @@ export default async function Home() {
   return (
     <div>
       <Header />
-      <Navbar />
-      <About />
-      <main className="mt-10 bg-gray-900 px-4 rounded-lg text-center">
-        <h2 className="text-2xl font-bold pt-10">Último projeto</h2>
-        <div className=" p-10 m-10 flex gap-8  rounded-md">
-          <div>
-            {project.image && (
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={400}
-                height={300}
-                className="object-cover rounded-md "
-              />
-            )}
+      <NavbarMenu />
+
+      <main>
+        <About />
+        <div className="mt-10 bg-gray-900 px-4 rounded-lg">
+          <div className="flex items-center justify-between pt-10 px-10">
+            <h2 className="text-4xl font-bold">Último projeto</h2>
+            <Link href="/projects" className="underline hover:text-orange-400">
+              Ver todos
+            </Link>
           </div>
-          <div className="max-w-[400px] text-left">
-            <h3 className="max-w-[350px] font-bold text-xl">{project.name}</h3>
-            <div className="my-5">
-              <PortableText value={limitedText} />
+          <div className=" p-10  flex gap-8  rounded-md">
+            <div>
+              {project.image && (
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={400}
+                  height={300}
+                  className="object-cover rounded-md "
+                />
+              )}
             </div>
-            <ButtonLink label="ver mais..." url={`/projects/${project.slug}`} />
+            <div className="max-w-[450px] text-left">
+              <h3 className="max-w-[350px] font-bold text-xl">
+                {project.name}
+              </h3>
+              <div className="my-5">
+                <PortableText value={limitedText} />
+              </div>
+              <div className="pt-2 hover:animate-pulse">
+                <ButtonLink
+                  label="ver mais..."
+                  url={`/projects/${project.slug}`}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

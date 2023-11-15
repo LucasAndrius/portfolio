@@ -1,3 +1,5 @@
+import { NavbarMenu } from "@/components/NavbarMenu";
+import { ExternalLink } from "@/components/svg";
 import { getProject } from "@/sanity/sanity.utils";
 import { PortableText } from "@portabletext/react";
 
@@ -17,16 +19,20 @@ export default async function ({ params }: Props) {
         <h1 className="text-5xl font-bold py-10 underline decoration-6 decoration-orange-400">
           {project.name}
         </h1>
-        <a
-          href={project.name}
-          title="View Project"
-          target="blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          View Project
-        </a>
+        {project.url && (
+          <a
+            href={project.url}
+            title="View Project"
+            target="blank"
+            rel="noopener noreferrer"
+            className="flex gap-2 items-center underline hover:text-orange-400"
+          >
+            <div>View Project</div>
+            <ExternalLink className="text-md text-white" />
+          </a>
+        )}
       </header>
+      <NavbarMenu />
       <div>
         <PortableText value={project.description} />
       </div>
