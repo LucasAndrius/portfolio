@@ -1,7 +1,10 @@
+import { Footer } from "@/components/Footer";
 import { NavbarMenu } from "@/components/NavbarMenu";
 import { ExternalLink } from "@/components/svg";
 import { getProject } from "@/sanity/sanity.utils";
 import { PortableText } from "@portabletext/react";
+import Image from "next/image";
+import styles from "@/styles/complement.module.css";
 
 type Props = {
   params: {
@@ -37,21 +40,22 @@ export default async function ({ params }: Props) {
         <h2 className="text-4xl font-bold mb-2">Resumo do projeto</h2>
         <PortableText value={project.description} />
       </div>
+      {
+        <Image
+          src={project.image}
+          alt={project.name}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+          className="mt-10 border-2 border-orange-400 object-cover"
+        />
+      }
       <hr />
-      <div>
+      <div className={styles.container}>
         <PortableText value={project.content} />
       </div>
-      {/**
-       * <Image
-        src={project.image}
-        alt={project.name}
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
-        className="mt-10 border-2 border-orange-400 object-cover"
-      />
-       */}
+      <Footer />
     </div>
   );
 }

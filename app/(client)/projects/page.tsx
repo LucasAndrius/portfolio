@@ -8,6 +8,7 @@ import { PortableText } from "@portabletext/react";
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
+
   return (
     <div>
       <header className="my-5">
@@ -21,7 +22,7 @@ export default async function ProjectsPage() {
           <Link
             key={project._id}
             href={`/projects/${project.slug}`}
-            className="bg-orange-100 border-2 border-orange-100 hover:border-orange-400 rounded-md scale-100 p-2 hover:scale-105 duration-500"
+            className="bg-orange-100 border-2 border-orange-100 hover:border-orange-400 rounded-md p-2 hover:scale-105 duration-500"
           >
             {project.image && (
               <Image
@@ -29,13 +30,13 @@ export default async function ProjectsPage() {
                 alt={project.name}
                 width={750}
                 height={300}
-                className="object-cover rounded-md "
+                className="object-center rounded-md "
               />
             )}
-            <div className="mt-4 font-extrabold text-gray-800">
-              {project.name}
+            <div className="mt-4 mb-2 font-extrabold text-gray-800">
+              <h4>{project.name}</h4>
             </div>
-            <div className="text-gray-500 text-sm">
+            <div className="text-gray-700 text-sm">
               <PortableText value={project.description} />
             </div>
           </Link>
