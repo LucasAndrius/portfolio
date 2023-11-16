@@ -25,7 +25,7 @@ export default async function ({ params }: Props) {
             title="View Project"
             target="blank"
             rel="noopener noreferrer"
-            className="flex gap-2 items-center underline hover:text-orange-400"
+            className="flex justify-end gap-2 min-w-[200px] items-center underline hover:text-orange-400"
           >
             <div>View Project</div>
             <ExternalLink className="text-md text-white" />
@@ -33,7 +33,8 @@ export default async function ({ params }: Props) {
         )}
       </header>
       <NavbarMenu />
-      <div>
+      <div className="my-10">
+        <h2 className="text-4xl font-bold mb-2">Resumo do projeto</h2>
         <PortableText value={project.description} />
       </div>
       <hr />
