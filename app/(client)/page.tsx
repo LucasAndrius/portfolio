@@ -3,6 +3,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { NavbarMenu } from "@/components/NavbarMenu";
+import { Skills } from "@/components/Skills";
 import { getProjectLatest } from "@/sanity/sanity.utils";
 import { PortableText } from "@portabletext/react";
 import { Metadata } from "next";
@@ -34,7 +35,6 @@ export default async function Home() {
     <div>
       <Header />
       <NavbarMenu />
-
       <main>
         <About />
         <div className="mt-10 bg-gray-900 px-4 rounded-lg">
@@ -73,6 +73,7 @@ export default async function Home() {
           </div>
         </div>
       </main>
+      <Skills />
       <Footer />
     </div>
   );

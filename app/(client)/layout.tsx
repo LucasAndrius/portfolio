@@ -16,7 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br" className="max-w-5xl mx-auto py-5">
+    <html
+      lang="pt-br"
+      className="max-w-5xl mx-auto py-5 !scroll-smooth bg-black text-white"
+    >
       <GoogleAnalytics GA_MEASUREMENT_ID="G-H799PHHSLE" />
       <body className={inter.className}>{children}</body>
     </html>

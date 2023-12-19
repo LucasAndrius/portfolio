@@ -6,7 +6,9 @@ export const About = () => {
     <div className="py-5 max-w-[60%]">
       <div>
         <div className="flex items-center py-5">
-          <h2 className="text-4xl">Olá, bem-vindo ao meu portfólio!</h2>
+          <h2 className="text-4xl font-bold">
+            Olá, bem-vindo ao meu portfólio!
+          </h2>
           <Image src={Hello} alt="" width={35} className="mb-[0.5rem] p-1" />
         </div>
         <p>
@@ -19,7 +21,7 @@ export const About = () => {
           <strong className="text-orange-400">intermitente</strong> em
           desenvolvimento. Estou em busca de oportunidades na área, seja em uma
           vaga de estágio ou posição júnior, para aplicar e expandir meus{" "}
-          <a href="#conhecimento" className="text-orange-400 underline">
+          <a href="#skills" className="text-orange-400 underline">
             conhecimentos
           </a>
           .
