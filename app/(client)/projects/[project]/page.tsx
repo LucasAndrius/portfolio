@@ -43,6 +43,7 @@ export default async function ({ params }: Props) {
           <PortableText
             value={project?.content}
             components={RichTextComponents}
+            key={project._id}
           />
         </div>
       </Container>
