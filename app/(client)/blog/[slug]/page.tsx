@@ -22,7 +22,11 @@ const page = async ({ params }: Params) => {
       </Link>
       <div className="md:mx-56 py-10">
         <H1 title={post.title} />
-        <PortableText value={post?.content} components={RichTextComponents} />
+        <PortableText
+          value={post?.content}
+          components={RichTextComponents}
+          key={post._id}
+        />
       </div>
     </Container>
   );

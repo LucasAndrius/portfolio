@@ -32,6 +32,7 @@ export default async function Home() {
                   <PortableText
                     value={info.bio}
                     components={RichTextComponents}
+                    key={info._id}
                   />
                 </div>
               </div>

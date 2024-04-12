@@ -37,7 +37,7 @@ export default async function BlogPage() {
                     </div>
                   </div>
                   <div className="my-3">
-                    <PortableText value={post.description} />
+                    <PortableText value={post.description} key={post._id} />
                   </div>
                 </li>
               </ul>

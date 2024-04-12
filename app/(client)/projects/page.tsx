@@ -46,6 +46,7 @@ export default async function ProjectsPage() {
                         <PortableText
                           value={project.description}
                           components={RichTextComponents}
+                          key={project._id}
                         />
                       </div>
                     </li>
