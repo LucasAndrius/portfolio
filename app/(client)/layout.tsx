@@ -17,7 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className="!scroll-smooth bg-gray-900 text-white">
-      <GoogleAnalytics GA_MEASUREMENT_ID="G-H799PHHSLE" />
       <body
         className={`${inter.className} px-3 sm:px-10 lg:grid lg:place-items-center`}
       >
