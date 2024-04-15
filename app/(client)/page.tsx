@@ -41,17 +41,19 @@ export default async function Home() {
                 <div className="bg-gray-800 rounded-md px-3 py-3 my-3 w-fit">
                   <ul className="flex flex-wrap justify-center gap-4 max-w-sm">
                     {techs.map((tech) => (
-                      <li className="flex p-3 bg-gray-900" key={tech._id}>
-                        <Image
-                          src={tech.image}
-                          height={40}
-                          width={40}
-                          alt={tech.alt}
-                          style={{ objectFit: "cover" }}
-                          quality={100}
-                          className="h-7 w-7 md:min-h-[25px] lg:min-h-[40px] md:mind-w-[25px] lg:min-w-[40px] hover:scale-105"
-                        />
-                      </li>
+                      <div key={tech._id}>
+                        <li className="flex p-3 bg-gray-900">
+                          <Image
+                            src={tech.image}
+                            height={40}
+                            width={40}
+                            alt={tech.alt}
+                            style={{ objectFit: "cover" }}
+                            quality={100}
+                            className="h-7 w-7 md:min-h-[25px] lg:min-h-[40px] md:mind-w-[25px] lg:min-w-[40px] hover:scale-105"
+                          />
+                        </li>
+                      </div>
                     ))}
                   </ul>
                 </div>
